@@ -1,3 +1,4 @@
+
 Given /^I am on the homepage$/ do
   visit "/"
 end
@@ -22,7 +23,17 @@ Then /^I should be on the project page for "([^"]*)"$/ do |name|
   project_path(Project.find_by_name!(name))
 end
 
+
+Given /^there is a project called "([^\"]*)"$/ do |name|
+  @project = FactoryGirl.create(:project, name:  name)
+end
+
+
+
 =begin
+
+
+
 
 Given /^(?:|I)am on (.+)$/ do |page_name|
 #  pending # express the regexp above with the code you wish you had
