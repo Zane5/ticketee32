@@ -30,11 +30,11 @@ before_filter :find_project, :only => [:show,
    end
 
    def edit
-    # @project = Project.find(params[:id])
+     @project = Project.find(params[:id])
    end
 
    def update
-     #@project = Project.find(params[:id])
+     @project = Project.find(params[:id])
      if @project.update_attributes(params[:project])
        flash[:notice] = "Project has been updated."
        redirect_to @project
@@ -45,7 +45,7 @@ before_filter :find_project, :only => [:show,
    end
 
    def destroy
-    # @project = Project.find(params[:id])
+     @project = Project.find(params[:id])
      @project.destroy
      flash[:notice] = "Project has been deleted."
      redirect_to projects_path
